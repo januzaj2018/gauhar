@@ -1,7 +1,17 @@
 function calculateScore() {
     let score = 0;
-    if (document.getElementById('q1').value == 8) score++;
-    if (document.getElementById('q2').value == 6) score++;
-    if (document.getElementById('q3').value == 12) score++;
-    document.getElementById('result').innerText = "Сіздің нәтижеңіз: " + score + "/3";
+    const answers = {
+        q1: "8",
+        q2: "6",
+        q3: "12"
+    };
+
+    Object.keys(answers).forEach(question => {
+        const selectedAnswer = document.querySelector(`input[name="${question}"]:checked`);
+        if (selectedAnswer && selectedAnswer.value === answers[question]) {
+            score++;
+        }
+    });
+
+    document.getElementById("result").innerText = `Сіздің баллыңыз: ${score} / 3`;
 }
