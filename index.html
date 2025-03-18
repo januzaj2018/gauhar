@@ -1,40 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math Tasks for Primary School Students</title>
+    <title>Қазақша Математика Тапсырмалары</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css">
+    <script src="index.js"></script>
     <style>
         body {
-            background-color: #ffffff;
+            background-color: #fdf6e3;
             color: #333;
             text-align: center;
             padding: 20px;
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Kazakh_National_Ornament_Pattern.svg/200px-Kazakh_National_Ornament_Pattern.svg.png');
+            background-repeat: repeat;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
-        .video-container {
-            margin-bottom: 20px;
-        }
-        iframe {
+        .video-container iframe {
             width: 100%;
             max-width: 560px;
             height: 315px;
+            border-radius: 10px;
         }
         section {
-            background: #f9f9f9;
+            background: #fff;
             padding: 20px;
             border-radius: 10px;
             margin-bottom: 20px;
+        }
+        .ornament {
+            font-size: 24px;
+            color: #b8860b;
+        }
+        .test input {
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
 <header>
-    <h1>Математикалық есептер</h1>
+    <h1>Қазақша Математикалық Тапсырмалар</h1>
+    <p class="ornament">✵ ✵ ✵</p>
 </header>
 <main class="container">
     <section>
@@ -42,33 +56,22 @@
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/TCbPFnRNTL0" frameborder="0" allowfullscreen></iframe>
         </div>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/rkOYm8RXIpI" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/33vCEjsWK9s" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/ndwo7xnHxG8" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/AgjFP6FTWKw" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/k8yHFklDOX4" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/L41R6xCoit4" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/NxLkhEMIKAI" frameborder="0" allowfullscreen></iframe>
-        </div>
     </section>
     <section>
-        <h2>Есеп</h2>
-        <p>1. Есеп</p>
-        <p>2. Есеп</p>
-        <p>3. Есеп</p>
+        <h2>Есептер</h2>
+        <p>1. 5 + 3 = ?</p>
+        <p>2. 10 - 4 = ?</p>
+        <p>3. 6 × 2 = ?</p>
+    </section>
+    <section class="test">
+        <h2>Тест</h2>
+        <form id="quizForm">
+            <label>5 + 3 = <input type="number" id="q1"></label><br>
+            <label>10 - 4 = <input type="number" id="q2"></label><br>
+            <label>6 × 2 = <input type="number" id="q3"></label><br>
+            <button type="button" onclick="calculateScore()">Жауап беру</button>
+        </form>
+        <p id="result"></p>
     </section>
 </main>
 </body>
